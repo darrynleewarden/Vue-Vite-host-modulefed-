@@ -12,10 +12,23 @@ export default defineConfig({
     federation({
       name: 'vue-host',
       remotes: {
-        kickbackRemote: 'http://127.0.0.1:5005/assets/remoteEntry.js',
         featureA: 'http://127.0.0.1:5001/assets/remoteEntry.js',
+        kickbackRemote: 'http://127.0.0.1:5005/assets/remoteEntry.js',
+
       },
-      shared: ['react', 'react-dom']
+      //shared: ['vue'],
+      shared: {
+        'react': {
+          singleton: true,
+          strictVersion: false,
+          requiredVersion: false
+        } as any,
+        'react-dom': {
+          singleton: true,
+          strictVersion: false,
+          requiredVersion: false
+        } as any
+      }
     })
   ],
   build: {
@@ -25,7 +38,7 @@ export default defineConfig({
     cssCodeSplit: false
   },
   server: {
-    host: '127.0.0.1',
+    // host: '127.0.0.1',
     port: 5173,
     strictPort: true,
     cors: true,

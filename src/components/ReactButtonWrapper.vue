@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch, toRaw } from 'vue'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
@@ -35,16 +35,18 @@ const renderButton = async () => {
     }
     
     if (reactRoot) {
+      debugger
+      console.log('Rendering React Button with props:', reactRoot, Button, toRaw(props))
       reactRoot.render(
         React.createElement(Button, {
           variant: props.variant,
           disabled: props.disabled,
-          onClick: () => emit('click'),
-          children: props.label
-        })
+          onClick: () => emit('click')
+        }, props.label) // Pass children as third argument, not as a prop
       )
     }
   } catch (err) {
+    console.log('Error rendering React Button:', err)
     console.error('Failed to load React Button:', err)
   }
 }

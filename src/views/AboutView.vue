@@ -15,7 +15,7 @@
   }
 }
 </style>
-<script lang="ts">
+<script >
 import { onMounted } from 'vue'
 
 onMounted(async () => {

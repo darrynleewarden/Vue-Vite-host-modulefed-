@@ -11,23 +11,28 @@
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/kickback">Kickback App</RouterLink>
+        <RouterLink to="/react-app">react App</RouterLink>
       </nav>
-      wrapper is belowssss
-      <XplorButtonWrapper
+      wrapper is belows
+      <!-- <XplorButtonWrapper
         label="absolute tester"
         variant="primary"
         @click="handleClick"
       />
-      <!-- <KickbackFullApp /> -->
+      <KickbackFullApp />
       <RemoteA />
-         <ReactHomePageWrapper />
+         <ReactHomePageWrapper /> -->
+         
     </div>
   </header>
 
   <RouterView />
   <div>
     <h2>React Button in Vue</h2>
-    
+    <ReactHomePageWrapper />
+     <ReactFullApp />
+
+    <h2>Multiple React Buttons in Vue</h2>
     <ReactButtonWrapper 
       label="Click Me!" 
       variant="primary"
@@ -60,6 +65,7 @@ import { defineAsyncComponent, ref} from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import ReactHomePageWrapper from './components/ReactHomePageWrapper.vue'
+// import ReactFullApp from './components/ReactFullApp.vue'
 // import RemoteA from 'featureA/App'
 const RemoteA = defineAsyncComponent(() => import('featureA/App'))
 
@@ -87,12 +93,13 @@ const handleDangerClick = () => {
 }
 import { onMounted } from 'vue'
 import XplorButtonWrapper from './components/XplorButtonWrapper.vue'
+import ReactFullApp from './components/ReactFullApp.vue'
 
 onMounted(async () => {
 
   const mountReactApp = await import('featureA/FullApp')
   mountReactApp.default('react-app-container')
-  const mountKickbackApp = await import('kickbackRemote/Btn')
+  const mountKickbackApp = await import('kickbackRemote/FullApplication')
   mountKickbackApp.default('kickback-app-container')
 
 })

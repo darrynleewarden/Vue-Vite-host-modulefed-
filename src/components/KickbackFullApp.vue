@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div><h2>COMEo n kickback please load</h2>
     <div v-if="loading" style="padding: 20px;">Loading Kickback application...</div>
     <div v-if="error" style="padding: 20px; color: red;">
       <h3>Failed to load application</h3>

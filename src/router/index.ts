@@ -23,6 +23,12 @@ const router = createRouter({
       // Full React application from remote
       component: () => import('../components/KickbackFullApp.vue'),
     },
+    {
+      path: '/react-app',
+      name: 'react-app',
+      // Full React application from remote
+      component: () => import('../components/ReactFullApp.vue'),
+    },
   ],
 })
 
