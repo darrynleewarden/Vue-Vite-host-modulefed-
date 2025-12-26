@@ -12,8 +12,8 @@ export default defineConfig({
     federation({
       name: 'vue-host',
       remotes: {
-        featureA: 'http://127.0.0.1:5001/assets/remoteEntry.js',
-        kickbackRemote: 'http://127.0.0.1:5005/assets/remoteEntry.js',
+        featureA: 'https://mod-fed-darryn-remote.s3.ap-southeast-2.amazonaws.com/assets/remoteEntry.js',//http://127.0.0.1:5001/assets/remoteEntry.js
+        kickbackRemote: 'http://127.0.0.1:6789/assets/remoteEntry.js',
 
       },
       //shared: ['vue'],
